@@ -4,6 +4,7 @@
   "description": "creating a graphql server with mongo db",
   "main": "index.js",
   "scripts": {
+    "serve": "node index",
     "start": "nodemon index"
   },
   "author": "david zagi",
