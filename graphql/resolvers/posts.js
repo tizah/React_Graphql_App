@@ -31,20 +31,23 @@ module.exports = {
     async createPost(_, { body }, context) {
       const user = checkAuth(context);
       console.log(user);
+      try {
+        if (body.trim() === "") {
+          throw new Error("Post body must not be empty");
+        }
 
-      if (body.trim() === "") {
-        throw new Error("Post body must not be empty");
+        const newPost = new Post({
+          body,
+          createdAt: new Date().toISOString(),
+          username: user.username,
+          user: user.id,
+        });
+
+        const post = await newPost.save();
+        return post;
+      } catch (err) {
+        throw new Error(err);
       }
-
-      const newPost = new Post({
-        body,
-        createdAt: new Date().toISOString(),
-        username: user.username,
-        user: user.id,
-      });
-
-      const post = await newPost.save();
-      return post;
     },
     async deletePost(_, { postId }, context) {
       const user = checkAuth(context);
