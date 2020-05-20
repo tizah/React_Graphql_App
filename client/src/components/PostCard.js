@@ -4,18 +4,11 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth";
 import LikeButton from "./LikeButton";
+import DeleteButton from "./DeleteButton";
 
 function PostCard(props) {
   const { body, createdAt, id, username, likes, comments } = props.post;
-
   const { user } = useContext(AuthContext);
-  function likePost() {
-    console.log("like post");
-  }
-
-  function commentOnPost() {
-    console.log("comment on post");
-  }
   return (
     <Card fluid>
       <Card.Content>
