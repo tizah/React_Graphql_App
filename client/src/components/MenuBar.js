@@ -14,7 +14,7 @@ function MenuBar() {
 
   const menuBar = user ? (
     <Menu pointing secondary size="huge" color="teal">
-      <Menu.Item name={`Welcome ${user.username}`} active as={Link} to="/" />
+      <Menu.Item name={user.username} active as={Link} to="/" />
 
       <Menu.Menu position="right">
         <Menu.Item name="logout" onClick={logout} />
@@ -48,7 +48,7 @@ function MenuBar() {
       </Menu.Menu>
     </Menu>
   );
-
+  console.log(user);
   return menuBar;
 }
 
