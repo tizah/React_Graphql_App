@@ -15,7 +15,7 @@
     "graphql-tag": "^2.10.3",
     "http-proxy-middleware": "^1.0.3",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "netlify-lambda": "^1.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
